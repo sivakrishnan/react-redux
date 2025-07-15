@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { buyCake } from '../redux'
 
-function CakeContainer(props) {
+function NewCakeContainer(props) {
+    const [number, setNumber] = useState(1)
     return (
         <div>
             <h2>Number of Cakes: {props.numOfCakes}</h2>
+            <input type='text' value={number} onChange={e => setNumber(e.target.value)}></input>
             <button onClick={props.buyCake}>By Cake</button>
         </div>
     )
