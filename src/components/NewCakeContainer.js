@@ -8,7 +8,7 @@ function NewCakeContainer(props) {
         <div>
             <h2>Number of Cakes: {props.numOfCakes}</h2>
             <input type='text' value={number} onChange={e => setNumber(e.target.value)}></input>
-            <button onClick={props.buyCake}>By Cake</button>
+            <button onClick={props.buyCake(number)}>By {number} of Cake</button>
         </div>
     )
 }
@@ -22,8 +22,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        buyCake: () => dispatch(buyCake())
+        buyCake: (number) => dispatch(buyCake(number))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(NewCakeContainer)
