@@ -2,20 +2,20 @@ import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from ".
 import axios from 'axios'
 
 
-export const fetchUserRequest = () => {
+export const fetchUsersRequest = () => {
     return {
         type: FETCH_USERS_REQUEST
     }
 }
 
-export const fetchUserSuccess = (users) => {
+export const fetchUsersSuccess = (users) => {
     return {
         type: FETCH_USERS_SUCCESS,
         payload: users
     }
 }
 
-export const fetchUserFailure = (error) => {
+export const fetchUsersFailure = (error) => {
     return {
         type: FETCH_USERS_FAILURE,
         payload: error
